@@ -24,11 +24,15 @@
     }
     tg.ready();
 
+    // Получаем ровно ту строку, что прислал Telegram
     const initData = tg.initData || "";
-    const unsafe = tg.initDataUnsafe || {};
 
-    document.getElementById("data").innerText =
-      "RAW initData:\n" + initData
+    // Выводим как есть — без decode, JSON.stringify и экранирования
+    document.getElementById("data").innerText = "RAW initData:\n" + initData;
+
+    // Для фронтенда можно отдельно разобрать объект (не для проверки подписи!)
+    // const unsafe = tg.initDataUnsafe || {};
+    // console.log(unsafe.user.photo_url); // ссылки будут рабочими
   }, 300);
 </script>
 </body>

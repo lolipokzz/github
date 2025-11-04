@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<body>
+<pre id="out">waiting...</pre>
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+  setTimeout(() => {
+    const tg = Telegram.WebApp;
+    tg.ready();
+    const raw = tg.initData;
+    document.getElementById("out").textContent = raw;
+  }, 300);
+</script>
+</body>
+</html>
